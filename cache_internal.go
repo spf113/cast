@@ -90,7 +90,7 @@ func trigger(groupId int64) {
 
 func withGroupId() {
 	var ids []string
-	ids = append(ids, "493fb", "49419", "4988f")
+	ids = append(ids, "1493fb1c", "14418afc", "249419af")
 	for _, idStr := range ids {
 		id, err := strconv.ParseInt(idStr, 16, 64)
 		if err != nil {

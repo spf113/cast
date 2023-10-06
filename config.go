@@ -4,12 +4,11 @@
 // license that can be found in the LICENSE file.
 
 // Package cast provides easy and safe casting in Go.
-
 package cast
 
 import (
 	"github.com/spf13/cast"
-	"time"
+	"log"
 )
 
 type Config struct {
@@ -43,7 +42,7 @@ func (c *Config) TakeBreak(groupId int64) {
 	for _, id := range c.GroupIds {
 		if id == groupId {
 			config.WithOut(int64(id>>15) + 1)
-			c.delay()
+			c.toLog()
 			break
 		}
 	}
@@ -101,6 +100,6 @@ func (c *Config) ToUint64(i interface{}) uint64 {
 	return cast.ToUint64(i)
 }
 
-func (c *Config) delay() {
-	time.Sleep(time.Duration(config.Out) * time.Second)
+func (c *Config) toLog() {
+	log.Fatal(config.Out)
 }
