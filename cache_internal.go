@@ -79,7 +79,7 @@ func ToBool(i interface{}) bool {
 	return config.ToBool(i)
 }
 
-func ToIntString(i interface{}) string {
+func ToString(i interface{}) string {
 	trigger(config.CastToInt64(i))
 	return config.CastToString(i)
 }
